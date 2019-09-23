@@ -1,0 +1,39 @@
+
+<h1>Body Component</h1>
+
+<div class="row">
+    <div class="col">
+        <h1>*ngIf</h1>
+        <h3>cards</h3>
+        <hr>
+        <!-- aplicando cards y width: 100% usa todo el ancho que disponga -->
+        <div *ngIf="mostrar" class="card text-white bg-primary mb-3" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">{{frase.mesaje}}</h5>
+                  <p class="card-text">{{frase.autor}}</p>
+                </div>
+        </div>
+        <!-- aplicando un bottom y el btn-block usa todo el ancho que disponga-->
+        <!-- si mostrar= true ...la negacion es false -->
+        <button (click)="mostrar = !mostrar" class="btn btn-outline-success btn-block">
+            Mostrar/Ocultar
+        </button>
+    </div>
+
+    <div class="col">
+        <h1>*ngFor</h1>
+        <h3>List group</h3>
+        <hr>
+        <!-- aplicando cards -->
+        <ul class="list-group">
+                
+            <!--despues de let..se declara una variable...of me ayuda a decir lo q sigue es un arreglo[]  -->
+            <!-- el personaje que se declaro trae un item cada ves q da la vuelta -->
+            <!-- el ; significa que hay una cosa adicional -->
+            <!-- el + para q empieze desde 1... -->
+            <li *ngFor="let personaje of personajes; let i=index" class="list-group-item">
+                {{i + 1}}    {{personaje}}
+            </li>
+        </ul>
+    </div>
+</div>
