@@ -1,0 +1,24 @@
+
+
+<h1 class="text-center">Buscando.. <small>{{ter}}</small></h1>
+<hr>
+
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let variable_hero of heroes, let i = index">
+        <img src="{{variable_hero.img}}" class="card-img-top" alt="{{variable_hero.nombre}}">
+        <div class="card-body">
+          <h5 class="card-title">{{variable_hero.nombre}}</h5>
+          <p class="card-text">
+            {{variable_hero.bio}}
+          </p>
+          <p class="card-text"><small class="text-muted">{{variable_hero.aparicion}}</small></p>
+
+          <!-- le mandamos el metodo de verHeroe y la posicion=index (i) -->
+          <button (click)="verHeroe(i)"
+            type="button" class="btn btn-outline-success btn-block">
+                Ver más...         
+          </button>
+
+        </div>
+      </div>
+</div>
