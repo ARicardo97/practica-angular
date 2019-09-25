@@ -72,6 +72,24 @@ export class HeroesService {
     getHeroe( i:string){
         return this.hero[i];
     }
+
+    //buscar heroe
+    buscarHeroes( termino:string):Heroe[]{
+      let heroesArr:Heroe[] = [];  //creamos un nuevo arreglo, que sera de un arreglo heroe y la inicializamos en 0
+      termino = termino.toLowerCase(); //para recibir si las busquedas vienen de mayuscula o minuscula
+      
+      //creamos una nueva variable para barrer todo el arreglo que tenemos en el servicio
+      for(let variable_barrer of this.hero){
+          //creamos una variable local 
+          let nombre = variable_barrer.nombre.toLowerCase(); //obtener el nombre dentro variable_barrer cuando recorra el arroglo
+          //realizamos una comparacion con el termino y si es mayor o igual a 0 kiere decir que lo encontró
+          if(nombre.indexOf( termino) >=0){
+              heroesArr.push(variable_barrer)//lo agregamos en el nuevo arreglo que creamos variable_barrer
+          }
+        }
+
+        return heroesArr;
+    }
 }
 
 //decirle al typeScrip que no se puede insertar un heroe sin estas caracteristicas

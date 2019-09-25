@@ -1,6 +1,7 @@
 
-<h1 class="animated fadeIn">{{heroe.nombre}}</h1>
-<small>{{heroe.aparicion}}</small>
+<!-- agregandole pipes | -->
+<h1 class="animated fadeIn">{{heroe.nombre | uppercase}}</h1>
+<small>( {{heroe.aparicion | date: 'medium'}} )</small>
 <hr>
 
 <div class="row animated fadeIn fast">
